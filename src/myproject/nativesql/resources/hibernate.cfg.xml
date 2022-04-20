@@ -12,7 +12,8 @@
 	<property name="connection.password">root</property>
 	<property name="hibernate.hbm2ddl.auto">update</property>
 	<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
-	<mapping class="myproject.nativesql.entity.Employee"/>
+	<!-- <mapping class="myproject.nativesql.entity.Employee"/> -->
+	<mapping resource="myproject/nativesql/resources/Employee.hbm.xml"/>
 	</session-factory>
 	
 	

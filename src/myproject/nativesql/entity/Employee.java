@@ -1,22 +1,22 @@
 package myproject.nativesql.entity;
+//
+//import javax.persistence.Column;
+//import javax.persistence.Entity;
+//import javax.persistence.Id;
+//import javax.persistence.Table;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
-@Entity
-@Table(name = "emp15")
+//@Entity
+//@Table(name = "emp15")
 public class Employee {
 
-	@Id
-	@Column
+//	@Id
+//	@Column
 	private int eno;
-	@Column
+//	@Column
 	private String ename;
-	@Column
+//	@Column
 	private float esal;
-	@Column
+//	@Column
 	private String eaddr;
 
 	public int getEno() {

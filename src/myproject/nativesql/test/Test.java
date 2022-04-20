@@ -2,6 +2,7 @@ package myproject.nativesql.test;
 
 import java.util.List;
 
+import org.hibernate.Query;
 import org.hibernate.SQLQuery;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -25,10 +26,10 @@ public class Test {
 			registry = builder.build();
 			sessionFactory = cfg.buildSessionFactory(registry);
 			session = sessionFactory.openSession();
-			SQLQuery sqlQuery = session.createSQLQuery("select * from emp15 where ESAL > ? and ESAL < :max");
-			sqlQuery.setFloat(0, 6000);
-			sqlQuery.setFloat("max", 9000);
-			sqlQuery.addEntity(Employee.class);
+			Query sqlQuery = session.getNamedQuery("sql_query");
+//			sqlQuery.setFloat(0, 6000);
+//			sqlQuery.setFloat("max", 9000);
+//			sqlQuery.addEntity(Employee.class);
 			List<Employee> empsList = sqlQuery.list();
 			System.out.println("ENO\tENAME\tESAL\tEADDR");
 			System.out.println("------------------------------------------");
