@@ -25,7 +25,9 @@ public class Test {
 			registry = builder.build();
 			sessionFactory = cfg.buildSessionFactory(registry);
 			session = sessionFactory.openSession();
-			SQLQuery sqlQuery = session.createSQLQuery("select * from emp15");
+			SQLQuery sqlQuery = session.createSQLQuery("select * from emp15 where ESAL > ? and ESAL < ?");
+			sqlQuery.setFloat(0, 6000);
+			sqlQuery.setFloat(1, 9000);
 			sqlQuery.addEntity(Employee.class);
 			List<Employee> empsList = sqlQuery.list();
 			System.out.println("ENO\tENAME\tESAL\tEADDR");
