@@ -30,7 +30,8 @@ public class Test {
 //			sqlQuery.setFloat(0, 6000);
 //			sqlQuery.setFloat("max", 9000);
 //			sqlQuery.addEntity(Employee.class);
-			SQLQuery sqlQuery = session.createSQLQuery("select eno,ename,esal,eaddr from emp15");
+//			SQLQuery sqlQuery = session.createSQLQuery("select eno,ename,esal,eaddr from emp15");
+			Query sqlQuery = session.getNamedQuery("sql_query");
 			List<Object[]> list = sqlQuery.list();
 			System.out.println("ENO\tENAME\tESAL\tEADDR");
 			System.out.println("------------------------------------------");
