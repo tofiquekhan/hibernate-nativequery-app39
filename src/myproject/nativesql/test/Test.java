@@ -26,18 +26,19 @@ public class Test {
 			registry = builder.build();
 			sessionFactory = cfg.buildSessionFactory(registry);
 			session = sessionFactory.openSession();
-			Query sqlQuery = session.getNamedQuery("sql_query");
+//			Query sqlQuery = session.getNamedQuery("sql_query");
 //			sqlQuery.setFloat(0, 6000);
 //			sqlQuery.setFloat("max", 9000);
 //			sqlQuery.addEntity(Employee.class);
-			List<Employee> empsList = sqlQuery.list();
+			SQLQuery sqlQuery = session.createSQLQuery("select eno,ename,esal,eaddr from emp15");
+			List<Object[]> list = sqlQuery.list();
 			System.out.println("ENO\tENAME\tESAL\tEADDR");
 			System.out.println("------------------------------------------");
-			for(Employee emp : empsList) {
-				System.out.print(emp.getEno()+"\t");
-				System.out.print(emp.getEname()+"\t");
-				System.out.print(emp.getEsal()+"\t");
-				System.out.println(emp.getEaddr());
+			for(Object[] objs : list) {
+				for(Object obj : objs) {
+				System.out.print(obj+"\t");
+			}
+			System.out.println();	
 			}
 		}catch (Exception e) {
 			e.printStackTrace();

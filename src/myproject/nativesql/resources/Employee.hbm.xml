@@ -12,9 +12,9 @@
     <property name="eaddr"/>
     
     </class>
-    <sql-query name="sql_query">
+    <!-- <sql-query name="sql_query">
     <return class="myproject.nativesql.entity.Employee"/>
-    select * from emp15
+    select * from emp15 where esal > ? and esal &lt; :max
     </sql-query>
-    
+     -->
     </hibernate-mapping>
